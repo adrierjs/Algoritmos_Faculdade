@@ -1,7 +1,7 @@
 package br.com.abc.javacore.Fmodificadorestatico.test;
 
 
-import br.com.abc.javacore.Fmodificadorestatico.classes.Cliente;
+import maratona_devjogo.abc.javacore.Fmodificadorestatico.classes.Cliente;
 
 /**
  * Created by William Suane on 4/14/2016.

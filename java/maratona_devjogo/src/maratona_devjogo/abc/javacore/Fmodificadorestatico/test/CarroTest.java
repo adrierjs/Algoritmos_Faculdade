@@ -4,7 +4,7 @@
  */
 package maratona_devjobo.br.com.abc.javacore.Fmodificadorestatico.test;
 
-import maratona_devjobo.br.com.abc.javacore.Fmodificadorestatico.classes.Carro;
+import maratona_devjogo.abc.javacore.Fmodificadorestatico.classes.Carro;
 
 
 

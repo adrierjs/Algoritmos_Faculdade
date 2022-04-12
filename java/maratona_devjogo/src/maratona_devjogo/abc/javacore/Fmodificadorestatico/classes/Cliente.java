@@ -1,4 +1,4 @@
-package br.com.abc.javacore.Fmodificadorestatico.classes;
+package maratona_devjogo.abc.javacore.Fmodificadorestatico.classes;
 
 /**
  * Created by William Suane on 4/14/2016.
