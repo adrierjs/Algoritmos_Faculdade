@@ -1,5 +1,5 @@
 def rotate_word(key, value):
-    key = key.lower()  # converter para miniscúlo
+    key = key.lower()  # converter para minuscúlo
     word_rot = ''
     for letter in key:
         codigo = ord(letter) + value
