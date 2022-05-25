@@ -102,9 +102,11 @@ class LinkedList:
 
 l = LinkedList()
 
-l.verificarPar()
 
-# print(len(l))
+l.append(20)
+print(l.__len__())
+# print(len(l)
+print(l[0])
 # print(l[0])
 # l[0] = 170
 # print(l[0])
