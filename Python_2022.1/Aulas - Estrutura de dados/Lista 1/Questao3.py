@@ -3,6 +3,7 @@ class Node:
         self.data = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -14,7 +15,6 @@ class LinkedList:
             while (aux.next):
                 aux = aux.next
             aux.next = Node(value)
-
         else:
             self.head = Node(value)
         self.__size += 1
@@ -31,30 +31,36 @@ class LinkedList:
         else:
             raise IndexError('Lista vazia.')
 
-    def __len__(self):
-        return self.__size
-
-    def divideLista(lista):
-        tamt = lista.__len__()
-        tam = (tamt / 2)
-        novaLista1 = []
-        novaLista2 = []
-        if tamt % 2 == 0:
-            for i in range(int(tam)):
-                novaLista1.append(lista.__getitem__(i))
-
-            for i in range(int(tam), tamt):
-                novaLista2.append(lista.__getitem__(i))
-
+    def __setitem__(self, index, value):
+        if (self.head):
+            aux = self.head
+            for i in range(index):
+                if (self.head):
+                    aux = aux.next
+                else:
+                    raise IndexError('Elemento fora da lista')
+            aux.data = value
         else:
-            for i in range(int(tam+1)):
-                novaLista1.append(lista.__getitem__(i))
+            raise IndexError('Lista vazia')
 
-            for i in range(int(tam + 1), tamt):
-                novaLista2.append(lista.__getitem__(i))
+    def concatenar(self, lista2):
+        self.append(lista2)
 
-        print(novaLista1)
-        print(novaLista2)
+
+    def listaIntercalada(self, lista2):
+        tam1 = self.__size
+        tam2 = lista2.__size
+        novaLista = []
+        if (self.head and lista2.head):
+            if (tam1 == tam2):
+                for i in range(tam1):
+                    novaLista.append(self[i])
+                    novaLista.append(lista2[i])
+        else:
+            raise IndexError('Lista vazia')
+
+        print(novaLista)
+
 
 
     def __str__(self):
@@ -63,17 +69,17 @@ class LinkedList:
         while aux:
             output += str(aux.data)
             if aux.next:
-                output += ', '
+                output += ' , '
             aux = aux.next
         output += ']'
         return output
 
-l = LinkedList()
-l.append(10)
-l.append(20)
-l.append(3)
-l.append(4)
-l.append(23)
+l1 = LinkedList()
+l1.append(1)
+l1.append(2)
+l2 = LinkedList()
+l2.append(3)
+l2.append(4)
+l1.listaIntercalada(l2)
 
-l.divideLista()
 
