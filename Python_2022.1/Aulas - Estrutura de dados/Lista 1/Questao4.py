@@ -22,6 +22,29 @@ class LinkedList:
     def __len__(self):
         return self.__size
 
+    def __getitem__(self, index):
+        if(self.head):
+            aux = self.head
+            if aux.next:
+                for i in range(index):
+                    aux = aux.next
+                return aux.data
+            else:
+                raise IndexError('O elemento não está na lista')
+        else:
+            raise IndexError('Lista vazia')
+
+    def retornaPrimeira(self, value):
+        if self.head:
+            tam = self.__size
+            for i in range(tam):
+                if self[i] == value:
+                    return i
+            else:
+                return ('O valor não está na lista')
+        else:
+            raise IndexError('Lista vazia')
+
     def __get__(self, index):
         if self.head:
             aux = self.head
@@ -34,9 +57,14 @@ class LinkedList:
         else:
             raise IndexError('Lista vazia')
 
-
 l = LinkedList()
 l.append(20)
 l.append(30)
+l.append(12)
+l.append(45)
+print("A primeira posição que o valor se encontra é:",l.retornaPrimeira(45))
+
+
+
 
 
