@@ -3,6 +3,19 @@ class Node:
         self.data = value
         self.next = None
 
+class Stack:
+  def __init__(self):
+    self.head = []
+
+  def push(self,value):
+    self.head.append(value)
+
+  def pop(self):
+     return self.head.pop()
+
+  def isEmpty(self):
+    return len(self.head) == 0
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -95,12 +108,26 @@ class LinkedList:
     def pop(self):
         self.removeUltimo()
 
+#Questão 4
+    def print_partial(self,tam1,tam2):
+        listaAux = LinkedList()
+        if 0 > tam1 or self.__size < tam2:
+            return 'Fora da lista'
+        for i in range(tam1, tam2):
+            listaAux.append(self[i])
 
-    def pop(self, index):
-        pass
+        return listaAux
 
+    def inverse(self):
+        pilha = Stack()
+        palavraInvert = ''
+        for i in range(len(self)):
+            pilha.push(self[i])
 
+        for i in range(len(self)):
+            palavraInvert += str(pilha.pop())
 
+        return palavraInvert
 
 
 l = LinkedList()
@@ -108,9 +135,10 @@ l.append(1)
 l.append(2)
 l.append(3)
 l.append(5)
-l.insert(3,4)
-l.insert(5,6)
-print(l)
+print(l.inverse())
+
+
+
 
 
 

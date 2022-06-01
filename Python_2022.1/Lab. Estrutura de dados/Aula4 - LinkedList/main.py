@@ -47,7 +47,7 @@ class LinkedList:
                 del aux1
 
         else:
-            raise IndexError('Lista vazia')  # a cabeça recebe nó
+            raise IndexError('Lista vazia')
 
     def verificarPar(self):
 
