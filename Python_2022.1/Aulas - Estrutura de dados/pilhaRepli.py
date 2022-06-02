@@ -15,9 +15,12 @@ class Stack:
         output = '('
         for i in range(len(self.head)):
             output += str(self.head[i])
-            if i != (len(self.head)-1):
-                output += '\n '
-        output += ')'
+            output += ')\n'
+            if i !=(len(self.head)-1):
+                output += '('
+
+
+
         return output
 
 
