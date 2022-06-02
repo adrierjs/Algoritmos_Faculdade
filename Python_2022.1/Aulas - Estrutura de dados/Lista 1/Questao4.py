@@ -45,7 +45,7 @@ class LinkedList:
         else:
             raise IndexError('Lista vazia')
 
-    def __get__(self, index):
+    def __getitem__(self, index):
         if self.head:
             aux = self.head
             for i in range(index):

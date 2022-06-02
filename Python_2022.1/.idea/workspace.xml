@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79eb40f4-6e81-45b0-a670-03bed249f73c" name="Changes" comment="estrutura_de_dados">
-      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 2/Questao1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 2/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab. Estrutura de dados/Aula4 - LinkedList/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lab. Estrutura de dados/Aula4 - LinkedList/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/3 - Pilhas e filas/teste.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/Exercicios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 1/Questao4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 1/Questao4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 2/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +56,8 @@
       <recent name="D:\Desktop\Algoritmos_Faculdade\Python_2022.1\Aulas - Estrutura de dados\Exercicio Dicio\Tuplas e dicionarios" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="ListaPablo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Exercicios">
+    <configuration name="Exercicios" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_2022.1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,32 +65,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aulas - Estrutura de dados" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ListaPablo.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Questao1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python_2022.1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6/Questao1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Aulas - Estrutura de dados/Exercicios.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,6 +99,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="ex_dicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python_2022.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aulas - Estrutura de dados/2 - Tuplas e dicionarios" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Aulas - Estrutura de dados/2 - Tuplas e dicionarios/ex_dicio.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_2022.1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -138,7 +141,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="teste" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_2022.1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -146,11 +149,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aulas - Estrutura de dados/Lista 2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aulas - Estrutura de dados/3 - Pilhas e filas" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\Desktop\Algoritmos_Faculdade\Python_2022.1\Aulas - Estrutura de dados\Lista 2\main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Aulas - Estrutura de dados/3 - Pilhas e filas/teste.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -161,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Exercicios" />
+        <item itemvalue="Python.ex_dicio" />
+        <item itemvalue="Python.teste" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.Questao2" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.Questao1" />
-        <item itemvalue="Python.ListaPablo" />
       </list>
     </recent_temporary>
   </component>

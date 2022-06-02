@@ -70,23 +70,7 @@ class LinkedList:
         output += ']'
         return output
 
-    def removeUltimo(self):
-        if (self.head):
-            aux1 = self.head #aux1 recebe o inicio
-            aux2 = aux1 #copia de aux1
-            while aux1.next: #se aux1 não tiver apontando para None
-                aux2 = aux1 #faz novamente uma copia de aux1
-                aux1 = aux1.next #faz o ponteiro avançar
-            if (aux2 == None): #se aux1 == None, é pq chegou no fim
-                del aux1  #deleta aux 1
-                self.head = None
-            else:
-                aux2.next = None
-                del aux1
-
-        else:
-            raise IndexError('Lista vazia')
-
+    #Questao1
     def extend(self, lista):
         tam = lista.__len__()
         for i in range(tam):
@@ -106,7 +90,35 @@ class LinkedList:
 
 #começo da questao 3
     def pop(self):
-        self.removeUltimo()
+        if self.head: #se nao tiver nada na lista
+            aux = self.head
+            while aux.next:
+                ant = aux
+                aux = aux.next
+            del aux
+            ant.next = None
+        elif not self.head.next:
+            del self.head
+            self.head = None
+        else:
+            raise IndexError('Lista vazia')
+
+    def pop(self,index):
+        if self.__size < index:
+            raise IndexError('Lista vazia')
+
+        elif index == 0:
+            aux = self.head
+            self.head = self.head.next
+            del aux
+        else:
+            aux = self.head
+            for i in range(index):
+                ant = aux
+                aux = aux.next
+            ant.next = aux.next
+            del aux
+
 
 #Questão 4
     def print_partial(self,tam1,tam2):
@@ -118,28 +130,32 @@ class LinkedList:
 
         return listaAux
 
+    # def inverse(self):
+    #     pilha = Stack()
+    #     lista = LinkedList()
+    #     for i in range(len(self)):
+    #         pilha.push(self[i])
+    #
+    #     for i in range(len(self)):
+    #         lista.append(pilha.pop())
+    #
+    #     return lista
+
     def inverse(self):
         pilha = Stack()
-        palavraInvert = ''
+        aux = self.head
         for i in range(len(self)):
-            pilha.push(self[i])
-
+            pilha.push(aux.data)
+            aux = aux.next
         for i in range(len(self)):
-            palavraInvert += str(pilha.pop())
-
-        return palavraInvert
-
-
+            self.pop(i)
+        while not pilha.isEmpty() == 0:
+            self.append(pilha.pop())
 l = LinkedList()
 l.append(1)
 l.append(2)
 l.append(3)
 l.append(5)
-print(l.inverse())
-
-
-
-
-
+l.pop()
 
 
