@@ -87,14 +87,21 @@ class LinkedList:
 
 
 
-l = LinkedList()
-l.append(20)
-l.append(30)
-l.append(22)
-l.append(12)
+# l = LinkedList()
+# l.append(20)
+# l.append(30)
+# l.append(22)
+# l.append(12)
+#
+#
+#
+# print(l)
 
+dicionario = {}
 
-
-print(l)
+dicionario.__setitem__("Adrier",10)
+print(dicionario.keys()) #retorna somente as chaves
+print(dicionario.values()) #valor
+print(dicionario.get("Adrier")) #retorna do valor da chave fornecida
 
 
