@@ -1,15 +1,15 @@
 class Aluno:
-    def __init__(self, nome, endereco):
-        self.nome = nome
-        self.endereco = endereco
+  def __init__(self, nome, endereco):
+    self.nome = nome
+    self.endereco = endereco
+
 
 class Curso:
-    def __init__(self, nome, turno):
-        self.nome = nome
-        self.turno = turno
-        self.alunos = []
-        self.next = None
-
+  def __init__(self, nome, turno):
+    self.nome = nome
+    self.turno = turno
+    self.alunos = []
+    self.next = None
 
 class Multilista:
     def __init__(self):
@@ -24,12 +24,22 @@ class Multilista:
         else:
             self.head = Curso(nome, turno)
 
-    def buscarAluno(self, nome, curso):
+    def buscarCurso(self, nome, turno):
         aux = self.head
-        while aux and (aux.nome != aux.nome or aux.turno !=aux.turno):
+        while aux and (aux.nome != nome or aux.turno != turno):
             aux = aux.next
         return aux
 
-uepb = Multilista()
-uepb.cadastrarCurso('Adrier', 'diurno')
-print(uepb.buscarAluno('Adrier','diurno'))
+    def cadastrarAluno(self, nome, endereco, nomeCurso, turnoCurso):
+        curso = self.buscarCurso(nomeCurso, turnoCurso)
+        if curso:
+            curso.alunos.append(Aluno(nome, endereco))
+        else:
+            print('Curso inexistente.')
+
+lista = Multilista()
+lista.cadastrarCurso('Computacao','Diurno')
+lista.cadastrarAluno('Adrier', 'js', 'Computacao', 'Diurno')
+
+
+

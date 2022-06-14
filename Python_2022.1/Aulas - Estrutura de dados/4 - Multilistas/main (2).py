@@ -1,29 +1,27 @@
 class Aluno:
-  def __init__(self, nome, endereco):
+  def __init__(self,nome,endereco):
     self.nome = nome
     self.endereco = endereco
 
-
 class Curso:
-  def __init__(self, nome, turno):
+  def __init__(self,nome,turno):
     self.nome = nome
     self.turno = turno
     self.alunos = []
     self.next = None
 
-
 class Multilista:
   def __init__(self):
     self.head = None
-
-  def cadastrarCurso(self, nome, turno):
+  
+  def cadastrarCurso(self,nome,turno):
     if self.head:
       aux = self.head
       while aux.next:
         aux = aux.next
-      aux.next = Curso(nome, turno)
+      aux.next = Curso(nome,turno)
     else:
-      self.head = Curso(nome, turno)
+      self.head = Curso(nome,turno)
 
   def buscarCurso(self,nome,turno):
     aux = self.head
@@ -32,7 +30,7 @@ class Multilista:
     return aux
   
   def cadastrarAluno(self,nome,endereco,nomeCurso,turnoCurso):
-    curso = self.buscarCurso(nomeCurso,turnoCurso)
+    curso = self.buscarCurso(nomeCurso,turnoCurso) #verifica se o aluno está cadastrado!
     if curso:
       curso.alunos.append(Aluno(nome,endereco))
     else:

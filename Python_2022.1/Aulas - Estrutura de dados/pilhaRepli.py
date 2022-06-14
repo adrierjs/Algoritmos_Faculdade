@@ -19,8 +19,6 @@ class Stack:
             if i !=(len(self.head)-1):
                 output += '('
 
-
-
         return output
 
 
