@@ -26,12 +26,12 @@ class BSTnode:
                 self.right.imprimir_pre()
 
     def imprimir_central(self):
-        if self.data:
-            if self.left:
-                self.left.imprimir_central()
-            print(self.data, end=' ')
-            if self.right:
-                self.right.imprimir_central()
+        if self.data:#verifica se tem dado
+            if self.left:#verifica se tem nó a esquerda
+                self.left.imprimir_central()#chama a função novamente para verificar a esquerda
+            print(self.data, end=' ')#imprime o dado
+            if self.right:#verifica se tem dado a direita
+                self.right.imprimir_central()#chama a função novamente para imprimir o dado a direita
 
     def imprimir_pos(self):
         if self.data:
@@ -41,19 +41,19 @@ class BSTnode:
                 self.right.imprimir_pos()
             print(self.data, end=' ')
 
-    # def tamanho(self):
-    #     if not self.data:
-    #         return 0
-    #     else:
-    #         if self.left:
-    #             esq = self.left.tamanho()
-    #         else:
-    #             esq = 0
-    #         if self.right:
-    #             dir = self.right.tamanho()
-    #         else:
-    #             dir = 0
-    #         return esq + dir + 1
+    def tamanho(self):
+        if not self.data:
+            return 0
+        else:
+            if self.left:
+                esq = self.left.tamanho()
+            else:
+                esq = 0
+            if self.right:
+                dir = self.right.tamanho()
+            else:
+                dir = 0
+        return esq + dir+1
 
     def soma_d(self):
         if not self.data:
@@ -69,7 +69,19 @@ class BSTnode:
                 dir = 0
             return esq + dir + self.data
 
-    def tamanho(self):
+    def soma_graus(self):
+        if self.data:
+            grau = 0
+            if self.left:
+                grau +=1
+                self.left.soma_graus()
+            if self.right:
+                grau +=1
+                self.right.soma_graus()
+            print("Nó:", self.data, end=" - ")
+            print("Grau:", grau)
+
+    def tamanhoT(self):
         if not self.data:
             return 0
         else:
@@ -89,6 +101,42 @@ class BSTnode:
             alt_d = self.right.altura() if self.right else -1
             return alt_e + 1 if alt_e > alt_d else alt_d + 1
 
+    def balanceada(self):
+        if not self.data:
+            return True
+        else:
+            x = self.left.balanceada() if self.left else True
+            y = self.right.balanceada() if self.right else True
+            a = self.left.altura() if self.left else -1
+            b = self.right.altura() if self.right else -1
+            z = abs(a - b) <= 1
+            return x and y and z
+
+    def gerar_lista(self, lista):
+        if self.data:
+            if self.left:
+                self.left.gerar_lista(lista)
+            lista.append(self.data)
+            if self.right:
+                self.right.gerar_lista(lista)
+
+    def destruir(self):
+        if self.data:
+            if self.left:
+                self.left.destruir()
+            if self.right:
+                self.right.destruir()
+            del self.data
+            del self
+
+    def gerar_arvore(self, lista, ini, fim):  # INCOMPLETO
+        if ini > fim:
+            pass
+        else:
+            meio = (ini + fim) // 2
+            self.data = lista[meio]
+            self.left = self.left.gerar_arvore(lista, ini, meio - 1)
+            self.right = self.right.gerar_arvore(lista, meio + 1, fim)
 
 root = BSTnode()
 root.insert(10)
@@ -103,13 +151,17 @@ print('Pre-ordem:', end=' ')
 root.imprimir_pre()
 print('\nOrdem central: ', end=' ')
 root.imprimir_central()
-print('\nPós ordem: ', end=' ')
-root.imprimir_pos()
-
 print('\nTamanho:', root.tamanho())
 print('Soma:', root.soma())
-
 print('Altura:', root.altura())
+print('Balanceada: ', root.balanceada())
+vet = []
+root.gerar_lista(vet)
+print('Vetor: ', vet)
+root.destruir()
+
+
+
 
 
 
