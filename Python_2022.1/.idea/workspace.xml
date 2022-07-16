@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79eb40f4-6e81-45b0-a670-03bed249f73c" name="Changes" comment="estrutura_de_dados">
-      <change afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/3 - Pilhas e filas/PilhaTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/4 - Multilistas/Replicar.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/ProvaI/Linkedlist.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6 - Multilist/Questao01-2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6 - Multilist/Questao01.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6 - Multilist/joaolucas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab. Estrutura de dados/Exercicios/dicionario.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab. Estrutura de dados/Exercicios/pop.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/3 - Pilhas e filas/teste.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/4 - Multilistas/main (2).py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/4 - Multilistas/main (2).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/MultiListas.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/MultiListas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/pilhaRepli.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/pilhaRepli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores/pratica.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores/pratica.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +39,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Algoritmos_Faculdade/Python_2022.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/adrie/Desktop/Algoritmos_Faculdade/Python_2022.1&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
@@ -69,7 +58,7 @@
       <recent name="D:\Desktop\Algoritmos_Faculdade\Python_2022.1\Aulas - Estrutura de dados\Exercicio Dicio\Tuplas e dicionarios" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pratica">
+  <component name="RunManager" selected="Python.bst">
     <configuration name="Lista 06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_2022.1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -177,8 +166,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.pratica" />
         <item itemvalue="Python.bst" />
+        <item itemvalue="Python.pratica" />
         <item itemvalue="Python.Lista 07" />
         <item itemvalue="Python.Lista 06" />
         <item itemvalue="Python.Questao02" />

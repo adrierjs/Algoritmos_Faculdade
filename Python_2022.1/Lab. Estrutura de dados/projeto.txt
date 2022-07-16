@@ -1,0 +1,26 @@
+
+Desenvolver uma codificação em Python que represente um Sistema de Cadastramento de Notas de Alunos em Disciplinas de uma Universidade.
+
+O sistema deve possuir as seguintes características:
+Aluno, Disciplina de aluno e Nota de aluno em disciplina;
+Todo aluno pode ter nenhuma, uma, ou mais disciplinas;
+Toda disciplina pode ter no máximo 2 notas;
+Os alunos devem estar representados em uma árvore;
+As disciplinas e notas dos alunos devem estar representados em uma multilista;
+Toda disciplina de um aluno só possui média se tiver 2 notas cadastradas.
+
+O sistema deve ter um menu onde o usuário poderá:
+Cadastrar aluno;
+Cadastrar disciplina em aluno;
+Cadastrar nota em disciplina de aluno;
+Remover aluno;
+Remover disciplina de aluno;
+Remover nota de disciplina de aluno;
+Atualizar aluno;
+Atualizar disciplina de aluno;
+Atualizar nota de disciplina de aluno;
+Visualizar a média do aluno em uma disciplina;
+Visualizar os nomes dos alunos em ordem alfabética;
+Visualizar os nomes dos alunos que estão com média menor que 7;
+Visualizar os nomes dos alunos que estão com média maior ou igual a 7;
+Visualizar as notas das disciplinas cadastradas em um aluno;

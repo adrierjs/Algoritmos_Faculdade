@@ -1,37 +1,41 @@
 class BSTnode:
-    def __init__(self, value=None): #incia nem nada só apenas p criar um nó
-        self.data = value  #self.data recebe o valor
-        self.left = self.right = None #Esquerda e direita recebem nulo porque ainda não inseriu um filho
+    def __init__(self, value=None):  # incia nem nada só apenas p criar um nó
+        self.data = value  # self.data recebe o valor
+        # Esquerda e direita recebem nulo porque ainda não inseriu um filho
+        self.left = self.right = None
 
     def insert(self, value):
-        if not self.data: #se não tiver nada em self.data
-            self.data = value #self.data recebe valor
-        elif value < self.data: #valor for menor que self.data
-            if self.left: #se tiver algo na esquerda
-                self.left.insert(value) #a esquerda recebe um valor
+        if not self.data:  # se não tiver nada em self.data
+            self.data = value  # self.data recebe valor
+        elif value < self.data:  # valor for menor que self.data
+            if self.left:  # se tiver algo na esquerda
+                self.left.insert(value)  # a esquerda recebe um valor
             else:
-                self.left = BSTnode(value) #se não tiver nada, cria um nó na esquerda
-        elif value > self.data: #se o valor for maior que o self.data
-            if self.right: #se tiver algo na direita
-                self.right.insert(value) #a direita recebe um novo valor
-            else: #se não tiver nada na direita, cria um novo nó
-                self.right = BSTnode(value) #se não tiver nada na direita, cria um novo nó
+                # se não tiver nada, cria um nó na esquerda
+                self.left = BSTnode(value)
+        elif value > self.data:  # se o valor for maior que o self.data
+            if self.right:  # se tiver algo na direita
+                self.right.insert(value)  # a direita recebe um novo valor
+            else:  # se não tiver nada na direita, cria um novo nó
+                # se não tiver nada na direita, cria um novo nó
+                self.right = BSTnode(value)
 
     def imprimir_pre(self):
         if self.data:
-            print(self.data, end=' ') #processo o nó
-            if self.left: #vai para esquerda
+            print(self.data, end=' ')  # processo o nó
+            if self.left:  # vai para esquerda
                 self.left.imprimir_pre()
-            if self.right: #vai para direita
+            if self.right:  # vai para direita
                 self.right.imprimir_pre()
 
     def imprimir_central(self):
-        if self.data:#verifica se tem dado
-            if self.left:#verifica se tem nó a esquerda
-                self.left.imprimir_central()#chama a função novamente para verificar a esquerda
-            print(self.data, end=' ')#imprime o dado
-            if self.right:#verifica se tem dado a direita
-                self.right.imprimir_central()#chama a função novamente para imprimir o dado a direita
+        if self.data:  # verifica se tem dado
+            if self.left:  # verifica se tem nó a esquerda
+                self.left.imprimir_central()  # chama a função novamente para verificar a esquerda
+            print(self.data, end=' ')  # imprime o dado
+            if self.right:  # verifica se tem dado a direita
+                # chama a função novamente para imprimir o dado a direita
+                self.right.imprimir_central()
 
     def imprimir_pos(self):
         if self.data:
@@ -73,10 +77,10 @@ class BSTnode:
         if self.data:
             grau = 0
             if self.left:
-                grau +=1
+                grau += 1
                 self.left.soma_graus()
             if self.right:
-                grau +=1
+                grau += 1
                 self.right.soma_graus()
             print("Nó:", self.data, end=" - ")
             print("Grau:", grau)
@@ -138,6 +142,7 @@ class BSTnode:
             self.left = self.left.gerar_arvore(lista, ini, meio - 1)
             self.right = self.right.gerar_arvore(lista, meio + 1, fim)
 
+
 root = BSTnode()
 root.insert(10)
 root.insert(7)
@@ -159,9 +164,3 @@ vet = []
 root.gerar_lista(vet)
 print('Vetor: ', vet)
 root.destruir()
-
-
-
-
-
-
