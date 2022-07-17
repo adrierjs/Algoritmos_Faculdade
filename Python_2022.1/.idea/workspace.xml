@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="79eb40f4-6e81-45b0-a670-03bed249f73c" name="Changes" comment="estrutura_de_dados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores/Codigo_ricardo.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores/pratica.py" beforeDir="false" afterPath="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores/pratica.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +59,7 @@
       <recent name="D:\Desktop\Algoritmos_Faculdade\Python_2022.1\Aulas - Estrutura de dados\Exercicio Dicio\Tuplas e dicionarios" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bst">
+  <component name="RunManager" selected="Python.projeto_ricardo">
     <configuration name="Lista 06" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Python_2022.1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,27 +94,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab. Estrutura de dados/Arvores/Lista 07.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Questao02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Python_2022.1" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\adrie\AppData\Local\Programs\Python\Python310\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6 - Multilist" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Lab. Estrutura de dados/Aula6 - Multilist/Questao02.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,13 +144,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="projeto_ricardo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Python_2022.1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Aulas - Estrutura de dados/Arvores/projeto_ricardo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.projeto_ricardo" />
         <item itemvalue="Python.bst" />
         <item itemvalue="Python.pratica" />
         <item itemvalue="Python.Lista 07" />
         <item itemvalue="Python.Lista 06" />
-        <item itemvalue="Python.Questao02" />
       </list>
     </recent_temporary>
   </component>

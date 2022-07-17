@@ -1,130 +1,65 @@
+# Ordem:
+# 1) insert
+# 2) imprimir_pre
+# 3_ imprimir centro
+# 4) imprimir pos
+# 5) tamanho
+# 6) soma
+# 7 altura
+# 8) balanceada
+# 9) gerar lista
+# 10) destruir
+# 11) gerar arvore
+# 12) balanceamento estatico
+
 class BSTNode:
-    def __init__(self, value=None):
+    def __init__(self, value = None):
         self.data = value
         self.left = self.right = None
-
-    def insert(self, value):
+    
+    def insert(self,value):
         if not self.data:
             self.data = value
-
-        elif value < self.data:
+        else:
             if self.left:
                 self.left.insert(value)
             else:
                 self.left = BSTNode(value)
-
-        elif value > self.data:
             if self.right:
                 self.right.insert(value)
             else:
                 self.right = BSTNode(value)
-
-    def pre_ordem(self):
+    
+    def imprimir_pre(self):
         if self.data:
-            print(self.data, end=' ')
-            if self.left:
-                self.left.pre_ordem()
-            if self.right:
-                self.right.pre_ordem()
-
-    def ordem_central(self):
-        if self.data:
-            if self.left:
-                self.left.ordem_central()
-            print(self.data, end=' ')
-            if self.right:
-                self.right.pre_ordem()
-
-    def pos_ordem(self):
+            print(self.data, end=' ')  # processo o nó
+            if self.left:  # vai para esquerda
+                self.left.imprimir_pre()
+            if self.right:  # vai para direita
+                self.right.imprimir_pre()
+    
+    def imprime_central(self):
         if self.data:
             if self.left:
-                self.left.pos_ordem()
+                self.left.imprime_central()
+            print(self.data, end=',')
             if self.right:
-                self.right.pos_ordem()
-            print(self.data, end == ' ')
-
-    def tamanho(self):
-        if not self.data:
-            return 0
-        else:
-            if self.left:
-                esq = self.left.tamanho()
-            else:
-                esq = 0
-            if self.right:
-                dir = self.right.tamanho()
-            else:
-                dir = 0
-
-        return esq + dir + 1
-
-    def soma_graus(self):
-        if not self.data:
-            return 0
-        else:
-            if self.left:
-                s_left = self.left.soma_graus()
-            else:
-                s_left = 0
-            if self.right:
-                s_right = self.right.soma_graus()
-            else:
-                s_right = 0
-
-        return s_left + s_right + self.data
-
-    def altura(self):
-        if not self.data:
-            return -1
-        else:
-            if self.left:
-                a_erq = self.left.altura()
-            else:
-                a_erq = 0
-            if self.right:
-                a_dir = self.right.altura()
-            else:
-                a_dir = 0
-        if a_erq < a_dir:
-            return a_erq + 1
-        else:
-            return a_dir+1
-
-    def inserir_lista(self, lista):
+                self.right.imprime_central()
+    
+    def imprime_pos(self):
         if self.data:
             if self.left:
-                self.left.inserir_lista(lista)
-            lista.append(self.data)
+                self.left.imprime_pos()
             if self.right:
-                self.right.inserir_lista(lista)
-
-    def deletar_ar(self):
-        if self.data:
-            if self.left:
-                self.left.deletar_ar()
-            if self.right:
-                self.right.deletar_ar()
-            del self.data
-            del self
-
+                self.right.imprime_pos()
+            print(self.data, end=',')
 
 root = BSTNode()
-root.insert(10)
-root.insert(7)
-root.insert(9)
-root.insert(5)
 root.insert(20)
-root.insert(25)
-root.insert(13)
+root.insert(0)
 root.insert(2)
-print('Pré ordem:')
-root.pre_ordem()
-print('\nOrdem central:')
-root.ordem_central()
-print('Tamanho:', root.tamanho())
-print('Soma graus:', root.soma_graus())
-print('Altura:', root.altura())
-lista = []
-root.inserir_lista(lista)
-print(lista)
-root.deletar_ar()
+root.insert(34)
+root.insert(10)
+root.imprimir_pre()
+
+        
