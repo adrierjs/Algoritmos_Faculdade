@@ -1,35 +1,80 @@
 class Pessoa:
-    def __init__(self,nome, salario):
-        self.nome = nome
-        self.salario = salario
+    def __init__(self, nome, salario):
+        self.__nome = nome
+        self.__salario = salario
+
+    def setNome(self, nome):
+        self.__nome = nome
 
     def getNome(self):
-        return self.nome
-    
+        return self.__nome
+
+    def setSalario(self, salario):
+        self.__salario = salario
+
     def getSalario(self):
-        return self.salario
+        return self.__salario
 
-class Tabela:
+class Hash:
     def __init__(self):
-        self.tamanho = 10
-        self.lista = [0]*self.tamanho
+        self.lista = [0]*10
 
-        for i in range(self.tamanho):
+        for i in range(10):
             self.lista[i] = []
 
-    def insert(self, Pessoa):
-        ascii = ord(Pessoa.nome[0])
-        codigo = ascii%2
-        self.lista[codigo].append(ascii)
+    def insert(self, pessoa):
+        ascii = ord(pessoa.getNome()[0])
+        pos = ascii % 10
+        self.lista[pos].append(pessoa)
 
-    def imprimir(self,nome):
-        for nome in self.lista:
-            print(self.lista[nome])
+    def buscarSalario(self,nome):
+        ascii = ord(nome[0])
+        pos = ascii % 10
+        for nome_e in self.lista[pos]:
+            if nome_e.getNome() == nome:
+                return nome_e.getSalario()
 
+    def imprimir(self):
+        for i in self.lista:
+            print('-', end=' ')
+            for funcionario in i:
+                print(funcionario.getNome(), end=',')
 
-p1 = Pessoa('Adrier',1000)
-p2 = Pessoa('Angelo',2000)
-t1 = Tabela()
-t1.insert(p1)
-t1.imprimir('Adrier')
+tabela = Hash()
+
+def menu():
+    print('1 - Inserir funcionário',
+    '\n2 - Buscar salário de um funcionário',
+    '\n0 - sair')
+
+entrada = -1
+t1 = Hash()
+verificacao = False
+while entrada != 0:
+    menu()
+    entrada = int(input('Digite: '))
+    if entrada == 1:
+        nome = input('Digite o nome do funcionário: ')
+        salario = float(input('Digite o salário do funcionário: '))
+        p1 = Pessoa(nome, salario)
+        t1.insert(p1)
+        verificacao = True
+
+    elif entrada == 2:
+        if verificacao:
+            nome = input('Digite o nome do funcionário: ')
+            salario = t1.buscarSalario(nome)
+            if not salario:
+                print('O usuário não foi encontrado!')
+            else:
+                print('R$:', salario)
+        else:
+            print('Não tem nenhum usuário inserido!')
+
+    elif entrada == 0:
+        entrada = 0
+    elif entrada == 3:
+        t1.imprimir()
+    else:
+        print('Opção incorreta!')
 
