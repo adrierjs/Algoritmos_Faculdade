@@ -1,0 +1,8 @@
+Anotações - Banco de dados
+
+CREATE [IF NOT EXISTS] DATABASE nome_Bd; #criar banco de dados - o if not exists é para verificar se não existe uma base de dados com esse nome
+SHOW databases; #mostrar os bancos de dados criados
+use nome_Bd; #comando para utilizar o banco de dado
+SELECT DATABASE(); #Comando para mostrar o banco de dados utilizado no momento
+DROP DATABASE IF EXISTS NOME_BD; #comando para deletar um banco de dados. o if exists é opcional, ele é usado para verificar se existe um banco de dados
+show tables;#comando para mostrar todas as tabelas
