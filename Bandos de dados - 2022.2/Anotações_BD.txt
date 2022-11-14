@@ -5,4 +5,43 @@ SHOW databases; #mostrar os bancos de dados criados
 use nome_Bd; #comando para utilizar o banco de dado
 SELECT DATABASE(); #Comando para mostrar o banco de dados utilizado no momento
 DROP DATABASE IF EXISTS NOME_BD; #comando para deletar um banco de dados. o if exists é opcional, ele é usado para verificar se existe um banco de dados
-show tables;#comando para mostrar todas as tabelas
+SHOW TABLES;#comando para mostrar todas as tabelas
+---------------------------------------------------------
+Criando tabelas
+
+Create table if not exists nome_tabela( 
+	
+)
+
+Create table nome_tabela(
+
+	parâmetros
+)
+
+---------------------------------------------
+Conectando uma tabela através de outra via chave estrangeira
+Create table Compras(
+	ID_Compra primary key,
+	Codigo_Produto varchar(50),
+	Data_Compra Date,
+	
+#Criação de chave estrangeira
+
+	FOREIGIN KEY (Codigo_Produto) REFERENCIE Produtos(Cod_Produto) #O atributo Codigo_Produto faz referência a chave primária Cod_Produto.
+------------------------------------------------------------------------------------------
+
+#Criando autocrimento: é o valor inicial que irá iniciar uma tabela, ex.: 15
+creatabe table tbl_teste_autoincremento(
+	codigo smallint primary key auto_increment, #especificando que o auto_incremento irá começar na primary key
+	nome varchar(20) not null
+) auto_increment = 15; #atribuindo o valor do autoincrement
+
+SELECT * FROM nome_tabela #mostrar todas as colunas de uma tabela
+
+SELECT MAX(variável) from nome_tabela #mostrar o valor máximo em uma tabela
+SELECT MIN(variável) from nome_tabela #mostrar o valor mínimo em uma tabela
+
+----------------------------------------------------------------------------------------------------
+ALTER TABLE nome_tabela auto_increment = novo_valor #alterar o valor do auto_increment
+ALTER TABLE tabela DROP COLUMN coluna; #Excluir a coluna de uma tabela. Ex.: ALTER TABLE tbt_livro DROP COLUMN ID_autor;
+ALTER TABLE tabela DROP PRIMARY KEY; #Exlcuir a chave primária de uma tabela
