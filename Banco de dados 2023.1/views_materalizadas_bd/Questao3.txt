@@ -1,0 +1,2 @@
+select * from view_materialized
+where atividades_realizadas >= 3;

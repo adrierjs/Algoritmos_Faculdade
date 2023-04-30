@@ -1,0 +1,8 @@
+create table if not exists premios(
+	id serial,
+	funcionario_id int, 
+	data date,
+	valor numeric,
+	primary key(id),
+	foreign key(funcionario_id) references funcionarios(id)
+)

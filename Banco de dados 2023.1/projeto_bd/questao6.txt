@@ -1,0 +1,51 @@
+create or replace function receber_premios() returns trigger as
+$$
+declare
+quantidade int;
+id_funcionario int;
+salario numeric;
+begin	
+	select p.funcionario_responsavel_id into id_funcionario
+	from projetos p
+	where p.id = new.projeto_id;
+	
+	select count(ap.atividade_id) into quantidade
+	from atividadesprojetos ap
+	where ap.projeto_id = new.projeto_id;
+	
+	select f.salario 
+	from funcionarios f into salario
+	where f.id = id_funcionario;
+	
+	if (quantidade = 3) then
+	
+		insert into Premios(funcionario_id, data, valor) values
+		(id_funcionario, NOW(), salario * 0.2);
+	end if;
+	return new;
+	
+end;
+$$ language plpgsql;
+
+
+create or replace trigger trigger_receber_premios
+after insert on atividadesprojetos
+for each row
+execute function receber_premios();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

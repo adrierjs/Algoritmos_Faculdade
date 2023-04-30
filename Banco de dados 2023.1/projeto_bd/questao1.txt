@@ -1,0 +1,94 @@
+create or replace function aumenta_salario()
+returns varchar as 
+$$ 
+	begin
+	-- Funcionários sem projetos
+
+		update funcionarios 
+		set salario = salario + salario * 0.05
+		where id in(
+		select distinct f.id from funcionarios f
+
+		left join departamentos d
+		on f.departamento_id = d.id
+		left join projetos p 
+		on p.departamento_id = d.id
+		left join atividadesprojetos ap
+		on p.id = ap.projeto_id
+		where ap.projeto_id is null);
+
+		-- Funcionários que estão em até dois projetos
+		update funcionarios
+		set salario = salario + (salario*0.10)
+		where id in (
+		select distinct f.id from funcionarios f
+		
+		inner join departamentos d
+		on f.departamento_id = d.id
+		inner join projetos p 
+		on p.departamento_id = d.id
+		inner join atividadesprojetos ap
+		on p.id = ap.projeto_id
+		group by f.id
+		having count(ap.projeto_id) <=2);
+
+		-- Funcionário que estão em pelo menos três projetos
+		update funcionarios 
+		set salario = salario + (salario*0.15)
+		where id in (
+		select distinct f.id from funcionarios f
+
+		inner join departamentos d
+		on f.departamento_id = d.id
+		inner join projetos p 
+		on p.departamento_id = d.id
+		inner join atividadesprojetos ap
+		on p.id = ap.projeto_id
+		group by f.id
+		having count(ap.projeto_id) >=3);
+		return 'Salários alterados com sucesso!';
+
+end;
+$$ language plpgsql;
+
+
+--Função pegando apenas os funcionários responsáveis por cada projeto
+create or replace function aumenta_salario()
+returns varchar as 
+$$ 
+	begin
+	-- Funcionários sem projetos
+
+		update funcionarios 
+		set salario = salario + salario * 0.05
+		where id in(
+		select f.id from funcionarios f
+		left join projetos p 
+		on p.funcionario_responsavel_id = f.id
+		where p.id is null);
+
+		-- Funcionários que estão em até dois projetos
+		update funcionarios
+		set salario = salario + (salario*0.10)
+		where id in (
+		select f.id from funcionarios f
+		inner join projetos p 
+		on p.funcionario_responsavel_id = f.id
+		group by f.id
+		having count(p.id) <=2);
+
+		-- Funcionário que estão em pelo menos três projetos
+		update funcionarios 
+		set salario = salario + (salario*0.15)
+		where id in (
+		select f.id from funcionarios f
+		inner join projetos p 
+		on p.funcionario_responsavel_id = f.id
+		group by f.id
+		having count(p.id) <=3);
+		return 'Salários alterados com sucesso!';
+
+end;
+$$ language plpgsql;
+
+

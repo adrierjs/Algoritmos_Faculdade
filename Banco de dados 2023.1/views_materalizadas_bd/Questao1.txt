@@ -1,0 +1,14 @@
+create materialized view view_materialized as (
+
+select p.descricao "nome_do_projeto", count(atividades.id) "atividades_realizadas", 
+f.nome "funcionario_responsável"
+from projetos p
+
+join atividadesprojetos ap
+on p.id = ap.projeto_id
+join atividades 
+on ap.atividade_id = atividades.id
+join funcionarios f 
+on p.funcionario_responsavel_id = f.id
+group by p.descricao,f.nome
+) with no data

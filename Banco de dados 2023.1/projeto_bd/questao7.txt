@@ -1,0 +1,3 @@
+create or replace view Total_premios_2022 as (
+	select * from premios
+	where premios.data >= '2022-01-01' and premios.data <='2022-12-31')

@@ -1,0 +1,7 @@
+Sim, antes do refresh, só tinha o projeto Alfa, logo após ele, também apareceu o projeto Gama.
+
+refresh materialized view view_materialized
+select * from view_materialized
+where atividades_realizadas >= 3; 
+
+

@@ -1,0 +1,14 @@
+alter table departamentos
+add column total_atividades numeric;	
+
+with query1 AS (
+    select d.id, count(ap.atividade_id) AS total
+    from departamentos d
+    inner join projetos p on d.id = p.departamento_id
+    inner join atividadesprojetos ap on ap.projeto_id = p.id
+    group by d.descricao, d.id
+)
+update departamentos
+set total_atividades = query1.total
+from query1
+where departamentos.id = query1.id;

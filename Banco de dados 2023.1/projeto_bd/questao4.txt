@@ -1,0 +1,20 @@
+create or replace function atualizar_estoque() returns trigger as
+$$
+begin 
+	update departamentos
+	set total_atividades = total_atividades + 1
+	where id = (select p.departamento_id 
+	from projetos p 
+	where p.id = new.projeto_id);
+	return new;
+
+end;
+$$ language plpgsql;
+
+create or replace trigger trigger_total_atividades
+after insert on atividadesprojetos
+for each row
+execute function atualizar_estoque();
+
+select * from atividadesprojetos
+select * from departamentos;
