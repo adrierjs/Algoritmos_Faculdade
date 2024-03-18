@@ -1,0 +1,188 @@
+Atividade 01 - Lista de exercícios de revisão
+
+Lista na plataforma Beecrowd.
+
+Chave de acesso: 1AEPrSq
+
+
+Exercício 01
+Exercícios a serem resolvidos usando o esquema expresa.sql.
+
+1 - Qual o total de funcionários da empresa?
+2 - Qual a média salarial da empresa?
+3 - Qual o total de funcionários e a média salarial por departamento?
+4 - Selecione o nome dos funcionários que são gerentes ou que ganham acima de R$ 3.000,00
+5 - Selecione os projetos que tenham no mínimo 3 atividades realizadas.
+6 - Selecione os departamentos que não têm projetos alocados.
+
+Exercício 02
+Instalar o PostgreSQL junto com a ferramenta de administração pgAdmin, no Windows ou Linux usando Docker.
+A instância deve se chamar postgres-bd2 com qualquer senha.
+Gravar um vídeo explicando o passo a passo executado e mostrando: 
+A execução do pgAdmin;
+A criação de um database;
+A criação de uma tabela chamada Teste, contendo um atributo chamado teste_id inteiro;
+A inserção de uma linha com um valor qualquer nessa tabela;
+Um select no conteúdo da mesma tabela.
+Pode se basear no artigo do link em anexo. Entretando, não adianta copiar os comandos, é necessário entendê-los e adaptar para seus valores.
+
+Edit: como nem todos têm equipamento suficiente parar usar o docker, a instalação pode ser feita direto no Windows ou Linux, sem prejuízo na nota.
+
+https://renatogroffe.medium.com/postgresql-docker-executando-uma-inst%C3%A2ncia-e-o-pgadmin-4-a-partir-de-containers-ad783e85b1a4
+
+Exercício 03
+
+Consultas aninhadas
+Usando as tabelas do sqlchallenge1 do Mode.com, responda às perguntas:
+
+1- Quais os nomes dos representantes de vendas que trabalham na região oeste?
+
+2- Quais os nomes dos representantes de vendas que trabalham na região oeste ou na região Nordeste?
+
+3- Quais os nomes dos representantes de vendas que não trabalham na região oeste ou na região Nordeste?
+
+4- Quais os nomes dos representantes de vendas que trabalham na região oeste e que começam com a letra E?
+
+5- Quais as contas que não fizeram nenhum pedido?
+ 
+6- Quantas contas nunca compraram poster?
+
+Exercício 04
+Responder às 5 perguntas do challenge. Mandar o código das consultas e a resposta correta num arquivo texto nessa atividade.
+
+https://mode.com/
+
+Exercício 05
+Resolver o mistério do jogo SQL Murder Mistery.
+Entregar um arquivo texto contendo os comandos utilizados para resolver o mistério.
+
+Exercicio 06 - Projeto
+
+Essa atividade terá peso 2, por isso ela vale 20 pontos.
+
+Usando o script script_ativ.sql, disponível aqui no classroom, e usando o Postgresql, resolva os problemas a seguir:
+
+1 - Crie uma função para reajustar salários. O reajuste deve ser aplicado para todos os funcionários, e deve seguir a seguinte tabela:
+5% de reajuste para os funcionários que não estão envolvidos em nenhuma atividade de projeto;
+10% de reajuste para os funcionários que estão envolvidos em até 2 atividades de projeto;
+15% de reajuste para os funcionários que estão envolvidos em pelo menos 3 atividades de projeto.
+2 - Execute o reajuste criado na questão 1.
+3 - Modifique a tabela Departamentos, acrescentando uma coluna chamada total_atividades (numeric). Essa coluna deve ser preenchida para todos os departamentos, contendo o número de atividades desenvolvidas, somando todos os projetos daquele departamento específico.
+
+4 - Crie um gatilho na tabela AtividadesProjetos, para que cada vez que uma nova linha seja inserida a tabela Departamentos tenha o seu campo total_atividades ajustado no departamento responsável pelo projeto no qual foi realizada uma nova atividade.
+
+
+5 - Crie uma tabela chamada Prêmios (id, funcionario_id, data, valor).
+
+
+6 - Crie um gatilho na tabela AtividadesProjetos, para que cada vez que uma nova linha seja inserida, caso o funcionário responsável pelo projeto tenha atingido 3 atividades, receba um prêmio de 20% do salário (inserido na tabela prêmio).
+
+
+7 - Crie uma visão chamada Total_premios_2022, que contenha o nome do funcionário e o total em prêmios que ele tem a receber em 2022.
+
+Exercício 07
+1 - Criar uma função Hello World.
+
+2 - Criar uma função que receba um funcionário e indique se o seu salário é acima da média ou não.
+
+3 - Instancie o script a seguir:
+
+CREATE TABLE Produto
+(
+cod_prod INT PRIMARY KEY,
+descricao VARCHAR(50) UNIQUE,
+qtde_disponivel INT NOT NULL DEFAULT 0
+); 
+INSERT INTO Produto VALUES (1, 'Feijão', 10); 
+INSERT INTO Produto VALUES (2, 'Arroz', 5); 
+INSERT INTO Produto VALUES (3, 'Farinha', 15); 
+ CREATE TABLE ItensVenda
+(
+cod_venda INT,
+id_produto INT,
+qtde_vendida INT,
+FOREIGN KEY (cod_venda) REFERENCES Produto(cod_prod) ON DELETE CASCADE
+);
+
+Crie um gatilho para atualizar o estoque ao se inserir um item de venda. A atualização é feita caso haja unidades suficientes no estoque. Caso contrário, uma exceção deve ser disparada.
+
+4 - Criar o esquema a seguir:
+Times(id, nome, pontos)
+Partidas(time_casa_id, time_fora_id, data, gols_casa, gols_fora)
+
+Insira alguns times.
+
+Crie um gatilho para, ao inserir uma partida, atualizar a pontuação dos times envolvidos.
+
+Exercício 08
+
+Usando o esquema empresa.sql:
+1. Crie uma visão materizalizada contendo 3 colunas: nome do projeto, quantidade de atividades realizadas, nome do responsável. Essa visão deve ser criada sem dados;
+2. Faça com que a visão seja povoada;
+3. Consulte na visão quais os nomes dos projetos com ao menos três atividades realizadas;
+4. Execute -- INSERT INTO atividadesprojetos VALUES(3,1,null,null);
+5. Refaça a consulta 3. Mudou alguma coisa?
+6. Dê um refresh na visão materializada e refaça a consulta 3. Mudou alguma coisa?
+
+
+Exercicio 09
+
+Dado o esquema a seguir:
+
+PACIENTES(id, nome, endereço, telefone)
+MÉDICOS(id, nome, especialidade_id)
+ESPECIALIDADES(id, descrição)
+CONSULTAS(id, paciente_id, medico_id, data)
+
+
+Faça as solicitações a seguir:
+1 - Crie uma tabela contendo duas colunas: uma coluna id, do tipo uuid, e uma coluna do tipo jsonb. A coluna json deve conter todas as informações do esquema acima (sem os ids, claro, pois será uma única tabela).
+2 - Insira ao menos 5 linhas na tabela.
+3 - Faça uma consulta nessa tabela para retornar todos os médicos.
+4 - Faça uma consulta para retornar todos os pacientes de um determinado médico (um dos que você inseriu).
+5 - Faça uma consulta usando a função jsonb_array_elements_text().
+
+
+Exercício 10 - Banco de Dados Cassandra
+
+Considere um sistema de uma livraria online que precisa armazenar informações sobre os livros disponíveis em seu catálogo. Cada livro possui um identificador único, título, autor, ano de publicação, gênero e idioma.
+
+Dado que se deseja realizar as seguintes consultas:
+
+   a) Obter os detalhes de um livro específico, dado o ID.
+   
+   b) Encontrar todos os livros disponíveis em um determinado idioma.
+   
+   c) Listar todos os livros de um determinado autor.
+
+
+1. 
+
+Crie as tabelas necessárias no esquema do Cassandra e defina as colunas corretamente para atender às consultas propostas.
+2. Insira os seguintes dados no banco de dados:
+
+   - Livro 1:
+     - ID: 1
+     - Título: "O Senhor dos Anéis"
+     - Autor: "J.R.R. Tolkien"
+     - Ano de publicação: 1954
+     - Gênero: Fantasia
+     - Idioma Inglês
+   
+   - Livro 2:
+     - ID: 2
+     - Título: "1984"
+     - Autor: "George Orwell"
+     - Ano de publicação: 1949
+     - Gênero: Ficção Científica
+     - Idioma: Espanhol
+   
+   - Livro 3:
+     - ID: 3
+     - Título: "Dom Casmurro"
+     - Autor: "Machado de Assis"
+     - Ano de publicação: 1899
+     - Gênero: Romance
+     - Idioma: Português
+
+3. Realize as consultas propostas

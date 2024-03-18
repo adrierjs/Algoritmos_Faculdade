@@ -1,0 +1,30 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+select uuid_generate_v1(),uuid_generate_v4();
+
+create table matriculas(
+	id uuid default uuid_generate_v4(),
+	dados jsonb
+);
+
+select * from matriculas;
+
+insert into matriculas(dados) values('{"nome":"Adrier","disciplinas":["Banco de Dados 2","Cálculo Numérico","Engenharia de Software"]}');
+insert into matriculas(dados) values('{"nome":"Gabriel","disciplinas":["Banco de Dados 2","Redes de Computadores","Engenharia de Software"]}');
+insert into matriculas(dados) values('{"nome":"Raimundo","disciplinas":["Banco de Dados 2","Cálculo Numérico","Ética em Computação"]}');
+insert into matriculas(dados) values('{"nome":"Ludmila","disciplinas":["Banco de Dados 2","Estrutura de Dados"]}');
+insert into matriculas(dados) values('{"nome":"Elder","disciplinas":["Banco de Dados 2","Cálculo Numérico","Engenharia de Software","TCC"]}');
+
+select dados->'nome' as alunos from matriculas;
+select dados->'disciplinas' as disciplinas from matriculas;
+select dados->'disciplinas' as disciplinas from matriculas where dados->'nome' = '"Elder"'
+select dados->'disciplinas' as disciplinas from matriculas where dados->>'nome' = 'Elder'
+select dados->'nome' as alunos from matriculas where dados->>'nome' LIKE 'A%';
+
+select jsonb_array_elements_text(dados->'disciplinas') from matriculas
+select distinct(jsonb_array_elements_text(dados->'disciplinas')) as disciplinas from matriculas order by disciplinas 
+
+select jsonb_array_elements_text(dados->'disciplinas') from matriculas where dados->>'nome' = 'Adrier'
+
+select dados->>'nome' as alunos from matriculas where dados->'disciplinas' @> '["Engenharia de Software"]'
+select dados->>'nome' as alunos from matriculas where dados->'disciplinas' @> '["Engenharia de Software","Cálculo Numérico"]'

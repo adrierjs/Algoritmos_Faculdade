@@ -1,0 +1,112 @@
+Exercício 04
+1-
+create or replace function hello_world() returns varchar as
+$$
+begin
+return 'Hello World!';
+end;
+$$ language plpgsql;
+select hello_world()
+2-
+create or replace function acima_media(nome_func varchar) returns boolean as
+$$
+declare
+salario_func numeric;
+media numeric;
+begin
+select salario
+from funcionarios
+where nome = nome_func into salario_func;
+select avg(salario)
+from funcionarios into media;
+if (salario_func > media) then
+return True;
+else
+return False;
+end if;
+end;
+$$ language plpgsql;
+select * from funcionarios
+select acima_media('Felipe')
+select acima_media('Gutemberg')
+3-
+create or replace function atualizar_estoque() returns trigger as
+$$
+declare
+estoque int;
+begin
+select qtde_disponivel
+from Produto
+where cod_prod = new.id_produto into estoque;
+if new.qtde_vendida > estoque then
+raise exception 'Estoque insuficiente.';
+else
+update Produto
+set qtde_disponivel = qtde_disponivel - new.qtde_vendida
+where cod_prod = new.id_produto;
+end if;
+return new;
+end;
+$$ language plpgsql;
+create or replace trigger trigger_atualizar_estoque
+before insert on ItensVenda
+for each row
+execute function atualizar_estoque()
+select * from ItensVenda
+select * from produto
+insert into ItensVenda values(1,3,2)
+insert into ItensVenda values(2,3,20)
+4 -
+/*4 - Criar o esquema a seguir:
+Times(id, nome, pontos)
+Partidas(time_casa_id, time_fora_id, data, gols_casa, gols_fora)
+Insira alguns times.
+Crie um gatilho para, ao inserir uma partida, atualizar a pontuação dos times envolvidos.
+*/
+create table times (
+id int,
+nome varchar,
+pontos int default 0,
+constraint times_pk primary key(id)
+);
+create table partidas(
+time_casa_id int,
+time_fora_id int,
+data date,
+gols_casa int,
+gols_fora int,
+constraint partidas_pk primary key(time_casa_id, time_fora_id, data)
+)
+insert into times values(1,'Flamengo');
+insert into times values(2,'Nacional');
+insert into times values(3,'Paysandu');
+insert into times values(4,'Vasco');
+select * from times
+create or replace function atualizar_pontos() returns trigger as
+$$
+begin
+if new.gols_casa > new.gols_fora then
+update times
+set pontos = pontos + 3
+where id = new.time_casa_id;
+elsif new.gols_casa < new.gols_fora then
+update times
+set pontos = pontos + 3
+where id = new.time_fora_id;
+else
+update times
+set pontos = pontos + 1
+where id = new.time_casa_id;
+update times
+set pontos = pontos + 1
+where id = new.time_fora_id;
+end if;
+return new;
+end;
+$$ language plpgsql;
+create or replace trigger trigger_atualizar_pontos
+after insert on partidas
+for each row
+execute function atualizar_pontos()
+select * from times order by pontos desc
+insert into partidas values(1,2,'2022-06-11T20:00:00',0,5)
