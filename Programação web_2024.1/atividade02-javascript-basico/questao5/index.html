@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+</head>
+<body>
+    <h1>Roteiro I - Javascript Básico</h1>
+    <div id="question4">
+        <div id="question">
+            <h3>Questão 5</h3>
+            <input type="text" id="array">
+            <button type="submit" id="submit">Enviar</button>
+            <p id="list"></p>
+            <p id="error" style="color: red; display: none;">Por favor, insira apenas números seguidos por vírgula e um espaço. Exemplo: 20, 30</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('array').addEventListener('input', function(event) {
+            const inputValue = event.target.value.trim();
+            const validFormat = /^(\d+(,\s*\d+)*)?$/.test(inputValue);
+
+            if (!validFormat) {
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+            
+            const numbers = inputValue.split(',').map(function(item) {
+                return parseInt(item.trim());
+            });
+
+            const validNumbers = numbers.every(function(num) {
+                return !isNaN(num);
+            });
+
+            if (!validNumbers) {
+                document.getElementById('error').style.display = 'block';
+                return;
+            }
+
+            document.getElementById('error').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
