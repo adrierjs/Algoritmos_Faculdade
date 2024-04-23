@@ -1,0 +1,30 @@
+Anotações JS 
+
+Qual a diferença entre var, let e const?
+	O var é de escopo global, o let de local e o const, é uma constante, ou seja, imutável. No caso, deve utilizar o var somente em último caso, pois como ele é de escopo global, acaba facilitando os erros de programação.
+
+
+
+O que seria a função map do js?
+	A função map, gera um novo array iterado. 
+	Sintaxe do map: elementoAtual, indice e arrayOriginal
+
+	Ex.: 
+	const array = [1,5,10]
+
+	const novo_array = array.map(num => num * 2)
+
+	console.log(novo_array)
+	
+	
+	
+O que seria uma função de callback?
+	É basicamente quando uma função vira parâmetro de outra. 
+	
+	Ex.: 
+	
+	
+	const valores
+
+	
+
